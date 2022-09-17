@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../../components/Card";
+import Loading from "../../components/Loading";
 
 const algos = [
   {
@@ -26,9 +27,13 @@ const Home = () => {
       <h1>Welcome to the Study Zone!</h1>
       <p>This is the home page.</p>
       <div>
-        {algos.map((algo) => {
-          return <Card key={algo.id} algo={algo} />;
-        })}
+        {algos ? (
+          algos.map((algo) => {
+            return <Card key={algo.id} algo={algo} />;
+          })
+        ) : (
+          <Loading />
+        )}
       </div>
     </div>
   );
