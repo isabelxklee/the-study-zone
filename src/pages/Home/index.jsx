@@ -27,13 +27,7 @@ const Home = () => {
       <p>This is the home page.</p>
       <div>
         {algos.map((algo) => {
-          return (
-            <Card
-              key={algo.id}
-              title={algo.title}
-              description={algo.description}
-            />
-          );
+          return <Card key={algo.id} algo={algo} />;
         })}
       </div>
     </div>

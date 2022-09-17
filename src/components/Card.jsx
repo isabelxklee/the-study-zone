@@ -1,10 +1,12 @@
 import React from "react";
 
-const Card = ({ title, description }) => {
+const Card = ({ algo }) => {
   return (
     <div>
-      <p>{title}</p>
-      <p>{description}</p>
+      <h3>{algo.title}</h3>
+      <p>{algo.description}</p>
+      <p>Difficulty: {algo.difficulty}</p>
+      <p>Category: {algo.category}</p>
     </div>
   );
 };
