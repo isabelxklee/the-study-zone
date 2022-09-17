@@ -1,7 +1,7 @@
-import React from "react";
-
-const Loading = () => {
-  return <div>This page is loading...</div>;
-};
+const Loading = () => (
+  <div>
+    <p>This page is loading...</p>
+  </div>
+);
 
 export default Loading;
