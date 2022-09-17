@@ -10,6 +10,14 @@ const algos = [
     difficulty: "Easy",
     category: "Array",
   },
+  {
+    id: 2,
+    title: "Palindrome Pairs",
+    description:
+      "Given a list of unique words, return all the pairs of the distinct indices (i, j) in the given list, so that the concatenation of the two words words[i] + words[j] is a palindrome.",
+    difficulty: "Hard",
+    category: "String",
+  },
 ];
 
 const Home = () => {
