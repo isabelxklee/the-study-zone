@@ -4,12 +4,17 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Error from "./pages/Error";
+import ShowAlgorithm from "./pages/ShowAlgorithm";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <Error />,
+  },
+  {
+    path: "/algorithms/:algorithmId",
+    element: <ShowAlgorithm />,
   },
 ]);
 
