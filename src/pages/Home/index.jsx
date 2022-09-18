@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../../components/Card";
+import { CardsContainer } from "../../components/component-styles";
 import Loading from "../../components/Loading";
 
 const algos = [
@@ -26,15 +27,16 @@ const Home = () => {
     <div>
       <h1>Welcome to the Study Zone!</h1>
       <p>This is the home page.</p>
-      <div>
-        {algos ? (
-          algos.map((algo) => {
-            return <Card key={algo.id} algo={algo} />;
-          })
-        ) : (
-          <Loading />
-        )}
-      </div>
+
+      {algos ? (
+        <CardsContainer>
+          {algos.map((algo) => (
+            <Card key={algo.id} algo={algo} />
+          ))}
+        </CardsContainer>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 };
