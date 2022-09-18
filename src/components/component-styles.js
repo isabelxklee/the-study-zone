@@ -4,17 +4,17 @@ export const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  padding: 120px;
+  padding: 120px 180px;
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     grid-template-columns: 1fr;
+    padding: 40px 80px;
   }
 `;
 
 export const CardElement = styled.div`
   border-radius: 8px;
-  border: 1px solid #000;
-  padding: 16px;
-  filter: drop-shadow(0 0 6px rgb(0, 0, 0, 0.2));
+  padding: 16px 32px;
+  filter: drop-shadow(0 0 6px rgb(235, 143, 171, 0.6));
   background: #fff;
 `;
