@@ -58,4 +58,19 @@ export const P = styled.p`
 export const InternalLink = styled(Link)`
   color: ${Colors.black};
   text-decoration: none;
+  font-size: 24px;
+`;
+
+export const Tag = styled.div`
+  border-radius: 100px;
+  background: ${Colors.black};
+  color: ${Colors.white};
+  padding: 8px 20px;
+  width: fit-content;
+`;
+
+export const TagsContainer = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
 `;

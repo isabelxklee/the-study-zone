@@ -11,8 +11,14 @@ const Card = ({ algo }) => {
         </Global.InternalLink>
       </h3>
       <Global.P>{algo.description}</Global.P>
-      <p>Difficulty: {algo.difficulty}</p>
-      <p>Category: {algo.category}</p>
+      <Global.TagsContainer>
+        <Global.Tag>
+          <Global.P>{algo.difficulty}</Global.P>
+        </Global.Tag>
+        <Global.Tag>
+          <Global.P>{algo.category}</Global.P>
+        </Global.Tag>
+      </Global.TagsContainer>
     </Styled.CardElement>
   );
 };
