@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import RecoletaRegular from "./fonts/Recoleta-Regular.woff";
 import RecoletaBold from "./fonts/Recoleta-Bold.woff";
 import RingsideWideBold from "./fonts/Ringside-Wide-Bold.otf";
+import { Link } from "react-router-dom";
 
 export const Colors = {
   beige: "#fdefe6",
@@ -52,4 +53,9 @@ export const H1 = styled.h1`
 export const P = styled.p`
   margin: 0;
   font-size: 16px;
+`;
+
+export const InternalLink = styled(Link)`
+  color: ${Colors.black};
+  text-decoration: none;
 `;
