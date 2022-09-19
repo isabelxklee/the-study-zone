@@ -3,6 +3,12 @@ import RecoletaRegular from "./fonts/Recoleta-Regular.woff";
 import RecoletaBold from "./fonts/Recoleta-Bold.woff";
 import RingsideWideBold from "./fonts/Ringside-Wide-Bold.otf";
 
+export const Colors = {
+  beige: "#fdefe6",
+  black: "#2a1203",
+  pink: "#f68393",
+};
+
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Recoleta";
@@ -29,8 +35,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Recoleta", serif;
     /* font-family: "Ringside Wide", sans-serif; */
     font-weight: 400;
-    color: #000;
-    background: #fff;
+    color: ${Colors.black};
+    background: ${Colors.beige};
   }
 `;
 
