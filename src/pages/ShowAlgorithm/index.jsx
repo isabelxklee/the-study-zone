@@ -1,10 +1,12 @@
 import React from "react";
+import { GlobalStyle } from "../../styles";
 
 const ShowAlgorithm = () => {
   return (
-    <div>
+    <>
+      <GlobalStyle />
       <h1>Algorithm Page</h1>
-    </div>
+    </>
   );
 };
 

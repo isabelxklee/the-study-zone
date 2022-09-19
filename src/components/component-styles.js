@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import * as Global from "../styles";
 
 export const CardsContainer = styled.div`
   display: grid;
@@ -16,5 +17,5 @@ export const CardElement = styled.div`
   border-radius: 8px;
   padding: 16px 32px;
   filter: drop-shadow(0 0 6px rgb(235, 143, 171, 0.6));
-  background: #fff;
+  background: ${Global.Colors.white};
 `;

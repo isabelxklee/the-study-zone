@@ -7,6 +7,7 @@ export const Colors = {
   beige: "#fdefe6",
   black: "#2a1203",
   pink: "#f68393",
+  white: "#fff",
 };
 
 export const GlobalStyle = createGlobalStyle`
