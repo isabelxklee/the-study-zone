@@ -41,6 +41,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
+export const Wrapper = styled.div`
+  padding: 120px;
+`;
+
+export const H1 = styled.h1`
+  font-size: 60px;
+`;
+
 export const P = styled.p`
   margin: 0;
   font-size: 16px;

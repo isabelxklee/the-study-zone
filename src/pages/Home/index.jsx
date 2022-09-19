@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../../components/Card";
 import { CardsContainer } from "../../components/component-styles";
 import Loading from "../../components/Loading";
+import * as Global from "../../styles";
 
 const algos = [
   {
@@ -24,9 +25,9 @@ const algos = [
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to the Study Zone!</h1>
-      <p>This is the home page.</p>
+    <Global.Wrapper>
+      <Global.H1>Welcome to the Study Zone!</Global.H1>
+      <Global.P>This is the home page.</Global.P>
 
       {algos ? (
         <CardsContainer>
@@ -37,7 +38,7 @@ const Home = () => {
       ) : (
         <Loading />
       )}
-    </div>
+    </Global.Wrapper>
   );
 };
 
