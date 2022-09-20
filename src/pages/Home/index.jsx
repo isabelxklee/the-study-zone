@@ -49,7 +49,12 @@ const Home = () => {
           {filteredData().length > 0 ? (
             <CardsContainer>
               {filteredData().map((algo) => (
-                <Card key={algo.id} algo={algo} />
+                <Card
+                  key={algo.id}
+                  algo={algo}
+                  selectedTag={selectedTag}
+                  setSelectedTag={setSelectedTag}
+                />
               ))}
             </CardsContainer>
           ) : (

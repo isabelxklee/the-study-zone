@@ -2,9 +2,7 @@ import React from "react";
 import * as Global from "../styles";
 import { categories, difficultyLevels } from "../data";
 
-const Filter = ({ selectedTag, setSelectedTag }) => {
-  // console.log(selectedTag);
-
+const Filter = ({ setSelectedTag }) => {
   return (
     <div>
       <Global.H3>Select a filter</Global.H3>

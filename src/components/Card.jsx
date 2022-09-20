@@ -2,7 +2,7 @@ import React from "react";
 import * as Styled from "./component-styles";
 import * as Global from "../styles";
 
-const Card = ({ algo }) => {
+const Card = ({ algo, setSelectedTag }) => {
   return (
     <Styled.CardElement>
       <Global.H3>
@@ -12,8 +12,12 @@ const Card = ({ algo }) => {
       </Global.H3>
       <Global.P>{algo.description}</Global.P>
       <Global.TagsContainer>
-        <Global.Tag primary>{algo.difficulty}</Global.Tag>
-        <Global.Tag>{algo.category}</Global.Tag>
+        <Global.Tag primary onClick={() => setSelectedTag(algo.difficulty)}>
+          {algo.difficulty}
+        </Global.Tag>
+        <Global.Tag onClick={() => setSelectedTag(algo.category)}>
+          {algo.category}
+        </Global.Tag>
       </Global.TagsContainer>
     </Styled.CardElement>
   );
