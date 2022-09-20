@@ -9,9 +9,14 @@ import * as Global from "../../styles";
 const Home = () => {
   const [selectedTag, setSelectedTag] = useState(null);
 
-  const filteredData = data.filter(
-    (algo) => algo.category === selectedTag || algo.difficulty === selectedTag
-  );
+  const filteredData = () => {
+    return selectedTag === null
+      ? data
+      : data.filter(
+          (algo) =>
+            algo.category === selectedTag || algo.difficulty === selectedTag
+        );
+  };
 
   return (
     <Global.Wrapper>
@@ -32,7 +37,7 @@ const Home = () => {
 
       {data ? (
         <CardsContainer>
-          {filteredData.map((algo) => (
+          {filteredData().map((algo) => (
             <Card key={algo.id} algo={algo} />
           ))}
         </CardsContainer>

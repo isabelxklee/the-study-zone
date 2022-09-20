@@ -26,6 +26,7 @@ const Filter = ({ selectedTag, setSelectedTag }) => {
             ))
           : false}
       </Global.TagsContainer>
+      <button onClick={() => setSelectedTag(null)}>Reset</button>
     </div>
   );
 };
