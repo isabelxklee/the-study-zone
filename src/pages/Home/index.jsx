@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { data } from "../../data";
 import Card from "../../components/Card";
 import Loading from "../../components/Loading";
@@ -7,6 +7,12 @@ import { CardsContainer } from "../../components/component-styles";
 import * as Global from "../../styles";
 
 const Home = () => {
+  const [selectedTag, setSelectedTag] = useState(null);
+
+  const filteredData = data.filter(
+    (algo) => algo.category === selectedTag || algo.difficulty === selectedTag
+  );
+
   return (
     <Global.Wrapper>
       <Global.H1>Welcome to the Study Zone!</Global.H1>
@@ -22,11 +28,11 @@ const Home = () => {
         of Lorem Ipsum.
       </Global.P>
 
-      <Filter />
+      <Filter selectedTag={selectedTag} setSelectedTag={setSelectedTag} />
 
       {data ? (
         <CardsContainer>
-          {data.map((algo) => (
+          {filteredData.map((algo) => (
             <Card key={algo.id} algo={algo} />
           ))}
         </CardsContainer>
