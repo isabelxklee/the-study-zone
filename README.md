@@ -1,5 +1,7 @@
 # The Study Zone Frontend ✨
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/eedf3273-c692-4637-b5d3-fa5383159585/deploy-status)](https://app.netlify.com/sites/the-study-zone/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -28,3 +30,9 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Built With
+
+- [React.js](https://reactjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [React Router](https://reactrouter.com/en/main)
