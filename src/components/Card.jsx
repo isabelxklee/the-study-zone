@@ -5,19 +5,15 @@ import * as Global from "../styles";
 const Card = ({ algo }) => {
   return (
     <Styled.CardElement>
-      <h3>
+      <Global.H3>
         <Global.InternalLink to={`algorithms/${algo.id}`}>
           {algo.title}
         </Global.InternalLink>
-      </h3>
+      </Global.H3>
       <Global.P>{algo.description}</Global.P>
       <Global.TagsContainer>
-        <Global.Tag primary>
-          <Global.P>{algo.difficulty}</Global.P>
-        </Global.Tag>
-        <Global.Tag>
-          <Global.P>{algo.category}</Global.P>
-        </Global.Tag>
+        <Global.Tag primary>{algo.difficulty}</Global.Tag>
+        <Global.Tag>{algo.category}</Global.Tag>
       </Global.TagsContainer>
     </Styled.CardElement>
   );

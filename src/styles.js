@@ -59,12 +59,13 @@ export const H1 = styled.h1`
 export const H3 = styled.h3`
   font-size: 24px;
   font-weight: 600;
-  margin: 0;
+  margin: 8px 0;
 `;
 
 export const P = styled.p`
   margin: 0;
   font-size: 16px;
+  margin: 8px 0;
 `;
 
 export const InternalLink = styled(Link)`
