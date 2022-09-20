@@ -45,6 +45,10 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Wrapper = styled.div`
   padding: 120px;
+
+  @media (max-width: 800px) {
+    padding: 40px 20px;
+  }
 `;
 
 export const H1 = styled.h1`

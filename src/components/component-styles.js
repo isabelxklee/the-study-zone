@@ -9,7 +9,7 @@ export const CardsContainer = styled.div`
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
-    padding: 40px 80px;
+    padding: 40px 0;
   }
 `;
 
