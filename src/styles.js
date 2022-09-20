@@ -66,6 +66,17 @@ export const P = styled.p`
   font-size: 16px;
 `;
 
+export const Button = styled.button`
+  border-radius: 100px;
+  background: ${(props) => (props.primary ? Colors.tan : Colors.blue)};
+  color: ${Colors.white};
+  padding: 8px 16px;
+  width: fit-content;
+  border: none;
+  font-family: "Recoleta", serif;
+  font-size: 16px;
+`;
+
 export const InternalLink = styled(Link)`
   color: ${Colors.black};
   text-decoration: none;
@@ -84,4 +95,6 @@ export const TagsContainer = styled.div`
   display: flex;
   gap: 8px;
   margin-top: 16px;
+  align-items: baseline;
+  flex-wrap: wrap;
 `;
