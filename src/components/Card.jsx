@@ -12,7 +12,7 @@ const Card = ({ algo }) => {
       </h3>
       <Global.P>{algo.description}</Global.P>
       <Global.TagsContainer>
-        <Global.Tag>
+        <Global.Tag primary>
           <Global.P>{algo.difficulty}</Global.P>
         </Global.Tag>
         <Global.Tag>

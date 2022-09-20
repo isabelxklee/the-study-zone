@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 
 export const Colors = {
   beige: "#fdefe6",
+  tan: "#c86c37",
   black: "#2a1203",
   pink: "#f68393",
   white: "#fff",
+  blue: "#2D6AD2",
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -35,7 +37,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: "Recoleta", serif;
-    /* font-family: "Ringside Wide", sans-serif; */
     font-weight: 400;
     color: ${Colors.black};
     background: ${Colors.beige};
@@ -63,7 +64,7 @@ export const InternalLink = styled(Link)`
 
 export const Tag = styled.div`
   border-radius: 100px;
-  background: ${Colors.black};
+  background: ${(props) => (props.primary ? Colors.tan : Colors.blue)};
   color: ${Colors.white};
   padding: 8px 20px;
   width: fit-content;
