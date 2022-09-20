@@ -11,23 +11,23 @@ const Filter = ({ selectedTag, setSelectedTag }) => {
       <Global.TagsContainer>
         {categories
           ? categories.map((category) => (
-              <Global.Button
+              <Global.Tag
                 key={category}
                 onClick={() => setSelectedTag(category)}
               >
                 {category}
-              </Global.Button>
+              </Global.Tag>
             ))
           : false}
         {difficultyLevels
           ? difficultyLevels.map((level) => (
-              <Global.Button
+              <Global.Tag
                 primary
                 key={level}
                 onClick={() => setSelectedTag(level)}
               >
                 {level}
-              </Global.Button>
+              </Global.Tag>
             ))
           : false}
       </Global.TagsContainer>

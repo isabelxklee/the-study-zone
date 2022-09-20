@@ -66,7 +66,13 @@ export const P = styled.p`
   font-size: 16px;
 `;
 
-export const Button = styled.button`
+export const InternalLink = styled(Link)`
+  color: ${Colors.black};
+  text-decoration: none;
+  font-size: 24px;
+`;
+
+export const Tag = styled.button`
   border-radius: 100px;
   background: ${(props) => (props.primary ? Colors.tan : Colors.blue)};
   color: ${Colors.white};
@@ -75,20 +81,7 @@ export const Button = styled.button`
   border: none;
   font-family: "Recoleta", serif;
   font-size: 16px;
-`;
-
-export const InternalLink = styled(Link)`
-  color: ${Colors.black};
-  text-decoration: none;
-  font-size: 24px;
-`;
-
-export const Tag = styled.div`
-  border-radius: 100px;
-  background: ${(props) => (props.primary ? Colors.tan : Colors.blue)};
-  color: ${Colors.white};
-  padding: 8px 20px;
-  width: fit-content;
+  cursor: pointer;
 `;
 
 export const TagsContainer = styled.div`
