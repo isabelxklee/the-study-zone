@@ -1,8 +1,17 @@
-# The Study Zone Frontend ✨
+# The Study Zone ✨
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/eedf3273-c692-4637-b5d3-fa5383159585/deploy-status)](https://app.netlify.com/sites/the-study-zone/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Study Zone is a place for me to document the algorithms that I've solved and the different solutions I've come up with.
+
+---
+
+## Features
+
+- Filter algorithms by category and difficulty level
+- Browse all algorithms
+
+---
 
 ## Available Scripts
 
@@ -30,6 +39,8 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+---
 
 ## Built With
 
