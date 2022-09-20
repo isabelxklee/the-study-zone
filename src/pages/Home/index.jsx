@@ -52,7 +52,6 @@ const Home = () => {
                 <Card
                   key={algo.id}
                   algo={algo}
-                  selectedTag={selectedTag}
                   setSelectedTag={setSelectedTag}
                 />
               ))}

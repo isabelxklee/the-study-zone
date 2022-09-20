@@ -12,10 +12,17 @@ const Card = ({ algo, setSelectedTag }) => {
       </Global.H3>
       <Global.P>{algo.description}</Global.P>
       <Global.TagsContainer>
-        <Global.Tag primary onClick={() => setSelectedTag(algo.difficulty)}>
+        <Global.Tag
+          primary
+          opacity={true}
+          onClick={() => setSelectedTag(algo.difficulty)}
+        >
           {algo.difficulty}
         </Global.Tag>
-        <Global.Tag onClick={() => setSelectedTag(algo.category)}>
+        <Global.Tag
+          opacity={true}
+          onClick={() => setSelectedTag(algo.category)}
+        >
           {algo.category}
         </Global.Tag>
       </Global.TagsContainer>
