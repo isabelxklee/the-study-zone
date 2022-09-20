@@ -1,9 +1,10 @@
 import React from "react";
-import Card from "../../components/Card";
-import { CardsContainer } from "../../components/component-styles";
-import Loading from "../../components/Loading";
-import * as Global from "../../styles";
 import { data } from "../../data";
+import Card from "../../components/Card";
+import Loading from "../../components/Loading";
+import Filter from "../../components/Filter";
+import { CardsContainer } from "../../components/component-styles";
+import * as Global from "../../styles";
 
 const Home = () => {
   return (
@@ -20,6 +21,8 @@ const Home = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </Global.P>
+
+      <Filter />
 
       {data ? (
         <CardsContainer>
