@@ -2,7 +2,7 @@ import React from "react";
 import * as Global from "../styles";
 import { categories, difficultyLevels } from "../data";
 
-const Filter = ({ setSelectedTag }) => {
+const Filter = ({ selectedTag, setSelectedTag }) => {
   return (
     <div>
       <Global.H3>Select a filter</Global.H3>
@@ -10,6 +10,7 @@ const Filter = ({ setSelectedTag }) => {
         {categories
           ? categories.map((category) => (
               <Global.Tag
+                opacity={selectedTag === category || selectedTag === null}
                 key={category}
                 onClick={() => setSelectedTag(category)}
               >
@@ -21,6 +22,7 @@ const Filter = ({ setSelectedTag }) => {
           ? difficultyLevels.map((level) => (
               <Global.Tag
                 primary
+                opacity={selectedTag === level || selectedTag === null}
                 key={level}
                 onClick={() => setSelectedTag(level)}
               >

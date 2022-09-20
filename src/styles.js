@@ -84,6 +84,8 @@ export const Tag = styled.button`
   font-family: "Recoleta", serif;
   font-size: 16px;
   cursor: pointer;
+  opacity: ${(props) => (props.opacity ? 1 : 0.5)};
+  transition: 0.3s;
 `;
 
 export const TagsContainer = styled.div`
