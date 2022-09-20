@@ -6,6 +6,15 @@ import Filter from "../../components/Filter";
 import { CardsContainer } from "../../components/component-styles";
 import * as Global from "../../styles";
 
+const EmptyState = () => {
+  return (
+    <>
+      <Global.H3>Oops, there aren't any algorithms to see here!</Global.H3>
+      <Global.P>Please try selecting another filter.</Global.P>
+    </>
+  );
+};
+
 const Home = () => {
   const [selectedTag, setSelectedTag] = useState(null);
 
@@ -36,11 +45,17 @@ const Home = () => {
       <Filter selectedTag={selectedTag} setSelectedTag={setSelectedTag} />
 
       {data ? (
-        <CardsContainer>
-          {filteredData().map((algo) => (
-            <Card key={algo.id} algo={algo} />
-          ))}
-        </CardsContainer>
+        <>
+          {filteredData().length > 0 ? (
+            <CardsContainer>
+              {filteredData().map((algo) => (
+                <Card key={algo.id} algo={algo} />
+              ))}
+            </CardsContainer>
+          ) : (
+            <EmptyState />
+          )}
+        </>
       ) : (
         <Loading />
       )}
