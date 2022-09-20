@@ -10,7 +10,7 @@ const Filter = ({ selectedTag, setSelectedTag }) => {
         {categories
           ? categories.map((category) => (
               <Global.Tag
-                opacity={selectedTag === category || selectedTag === null}
+                $opacity={selectedTag === category || selectedTag === null}
                 key={category}
                 onClick={() => setSelectedTag(category)}
               >
@@ -21,8 +21,8 @@ const Filter = ({ selectedTag, setSelectedTag }) => {
         {difficultyLevels
           ? difficultyLevels.map((level) => (
               <Global.Tag
-                primary
-                opacity={selectedTag === level || selectedTag === null}
+                $primary
+                $opacity={selectedTag === level || selectedTag === null}
                 key={level}
                 onClick={() => setSelectedTag(level)}
               >

@@ -76,7 +76,7 @@ export const InternalLink = styled(Link)`
 
 export const Tag = styled.button`
   border-radius: 100px;
-  background: ${(props) => (props.primary ? Colors.tan : Colors.blue)};
+  background: ${(props) => (props.$primary ? Colors.tan : Colors.blue)};
   color: ${Colors.white};
   padding: 8px 16px;
   width: fit-content;
@@ -84,7 +84,7 @@ export const Tag = styled.button`
   font-family: "Recoleta", serif;
   font-size: 16px;
   cursor: pointer;
-  opacity: ${(props) => (props.opacity ? 1 : 0.5)};
+  opacity: ${(props) => (props.$opacity ? 1 : 0.5)};
   transition: 0.3s;
 `;
 

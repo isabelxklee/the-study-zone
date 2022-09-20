@@ -13,14 +13,14 @@ const Card = ({ algo, setSelectedTag }) => {
       <Global.P>{algo.description}</Global.P>
       <Global.TagsContainer>
         <Global.Tag
-          primary
-          opacity={true}
+          $primary
+          $opacity={true}
           onClick={() => setSelectedTag(algo.difficulty)}
         >
           {algo.difficulty}
         </Global.Tag>
         <Global.Tag
-          opacity={true}
+          $opacity={true}
           onClick={() => setSelectedTag(algo.category)}
         >
           {algo.category}
