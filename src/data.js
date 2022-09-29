@@ -42,14 +42,3 @@ export const solutions = [
     algorithmId: 1,
   },
 ];
-
-export const categories = [
-  "String",
-  "Array",
-  "Linked List",
-  "Binary Tree",
-  "Stack",
-  "Queue",
-];
-
-export const difficultyLevels = ["Easy", "Medium", "Hard"];
