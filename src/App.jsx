@@ -1,19 +1,11 @@
 import React from "react";
 import Home from "./pages/Home";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { GlobalStyle } from "./styles";
-
-const GET_CATEGORIES = gql`
-  query GetCategories {
-    categories {
-      id
-      name
-    }
-  }
-`;
+import * as Query from "./queries";
 
 const App = () => {
-  const { loading, error, data } = useQuery(GET_CATEGORIES);
+  const { loading, error, data } = useQuery(Query.GET_CATEGORIES);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
