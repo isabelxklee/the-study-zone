@@ -29,19 +29,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-client
-  .query({
-    query: gql`
-      query GetCategories {
-        categories {
-          id
-          name
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result));
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

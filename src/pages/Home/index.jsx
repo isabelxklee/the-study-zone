@@ -15,7 +15,7 @@ const EmptyState = () => {
   );
 };
 
-const Home = () => {
+const Home = ({ categories }) => {
   const [selectedTag, setSelectedTag] = useState(null);
 
   const filteredData = () => {
@@ -42,7 +42,11 @@ const Home = () => {
         of Lorem Ipsum.
       </Global.P>
 
-      <Filter selectedTag={selectedTag} setSelectedTag={setSelectedTag} />
+      <Filter
+        selectedTag={selectedTag}
+        setSelectedTag={setSelectedTag}
+        categories={categories}
+      />
 
       {data ? (
         <>
