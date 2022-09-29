@@ -1,4 +1,3 @@
-import React from "react";
 import * as Global from "../styles";
 
 const Loading = () => (

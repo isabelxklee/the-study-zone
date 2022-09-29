@@ -8,7 +8,7 @@ import Loading from "./components/Loading";
 const App = () => {
   const { loading, error, data } = useQuery(Query.CategoriesAndDifficulties);
 
-  console.log(`Error: ${error}`);
+  console.log(error ? `Error: ${error}` : "Nothing to see here!");
 
   return (
     <>
