@@ -3,19 +3,22 @@ import Home from "./pages/Home";
 import { useQuery } from "@apollo/client";
 import { GlobalStyle } from "./styles";
 import * as Query from "./queries";
+import Loading from "./components/Loading";
 
 const App = () => {
   const { loading, error, data } = useQuery(Query.CategoriesAndDifficulties);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-
-  console.log(data);
+  console.log(`Error: ${error}`);
 
   return (
     <>
       <GlobalStyle />
-      <Home categories={data.categories} difficulties={data.difficulties} />
+
+      {loading ? (
+        <Loading />
+      ) : (
+        <Home categories={data.categories} difficulties={data.difficulties} />
+      )}
     </>
   );
 };
