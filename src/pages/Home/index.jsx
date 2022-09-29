@@ -15,7 +15,7 @@ const EmptyState = () => {
   );
 };
 
-const Home = ({ categories }) => {
+const Home = ({ categories, difficulties }) => {
   const [selectedTag, setSelectedTag] = useState(null);
 
   const filteredData = () => {
@@ -46,6 +46,7 @@ const Home = ({ categories }) => {
         selectedTag={selectedTag}
         setSelectedTag={setSelectedTag}
         categories={categories}
+        difficulties={difficulties}
       />
 
       {data ? (

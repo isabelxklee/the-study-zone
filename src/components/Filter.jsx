@@ -1,8 +1,7 @@
 import React from "react";
 import * as Global from "../styles";
-import { difficultyLevels } from "../data";
 
-const Filter = ({ selectedTag, setSelectedTag, categories }) => {
+const Filter = ({ selectedTag, setSelectedTag, categories, difficulties }) => {
   return (
     <div>
       <Global.H3>Select a filter</Global.H3>
@@ -17,18 +16,16 @@ const Filter = ({ selectedTag, setSelectedTag, categories }) => {
           </Global.Tag>
         ))}
 
-        {difficultyLevels
-          ? difficultyLevels.map((level) => (
-              <Global.Tag
-                $primary
-                $opacity={selectedTag === level || selectedTag === null}
-                key={level}
-                onClick={() => setSelectedTag(level)}
-              >
-                {level}
-              </Global.Tag>
-            ))
-          : false}
+        {difficulties.map((diff) => (
+          <Global.Tag
+            $primary
+            $opacity={selectedTag === diff.name || selectedTag === null}
+            key={diff.id}
+            onClick={() => setSelectedTag(diff.name)}
+          >
+            {diff.name}
+          </Global.Tag>
+        ))}
       </Global.TagsContainer>
       <button onClick={() => setSelectedTag(null)}>Reset</button>
     </div>
