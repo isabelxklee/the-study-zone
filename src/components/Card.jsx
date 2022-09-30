@@ -7,7 +7,7 @@ const Card = ({ algo, setSelectedTag }) => {
     <Styled.CardElement>
       <Global.H3>
         <Global.InternalLink to={`algorithms/${algo.id}`}>
-          {algo.title}
+          {algo.name}
         </Global.InternalLink>
       </Global.H3>
       <Global.P>{algo.description}</Global.P>
@@ -15,15 +15,15 @@ const Card = ({ algo, setSelectedTag }) => {
         <Global.Tag
           $primary
           $opacity={true}
-          onClick={() => setSelectedTag(algo.difficulty)}
+          onClick={() => setSelectedTag(algo.difficulty.name)}
         >
-          {algo.difficulty}
+          {algo.difficulty.name}
         </Global.Tag>
         <Global.Tag
           $opacity={true}
-          onClick={() => setSelectedTag(algo.category)}
+          onClick={() => setSelectedTag(algo.category.name)}
         >
-          {algo.category}
+          {algo.category.name}
         </Global.Tag>
       </Global.TagsContainer>
     </Styled.CardElement>
