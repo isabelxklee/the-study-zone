@@ -1,9 +1,11 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import { GlobalStyle } from "../../styles";
 import * as Global from "../../styles";
 
 const ShowAlgorithm = ({ algo }) => {
   console.log(algo);
+
   return (
     <Global.Wrapper>
       <GlobalStyle />
@@ -15,6 +17,8 @@ const ShowAlgorithm = ({ algo }) => {
         </Global.Tag>
         <Global.Tag $opacity={true}>{algo.category.name}</Global.Tag>
       </Global.TagsContainer>
+      <Global.H3>My Solution</Global.H3>
+      <ReactMarkdown>{algo.solution}</ReactMarkdown>
     </Global.Wrapper>
   );
 };
