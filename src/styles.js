@@ -54,6 +54,8 @@ export const Wrapper = styled.div`
 export const H1 = styled.h1`
   font-size: 60px;
   font-weight: 600;
+  margin: 20px 0;
+  line-height: 1;
 `;
 
 export const H3 = styled.h3`
@@ -83,7 +85,7 @@ export const Tag = styled.button`
   border: none;
   font-family: "Recoleta", serif;
   font-size: 16px;
-  cursor: pointer;
+  cursor: ${(props) => (props.$clickable ? "pointer" : "default")};
   opacity: ${(props) => (props.$opacity ? 1 : 0.5)};
   transition: 0.3s;
 `;

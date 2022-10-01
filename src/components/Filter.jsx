@@ -8,6 +8,7 @@ const Filter = ({ selectedTag, setSelectedTag, categories, difficulties }) => {
       <Global.TagsContainer>
         {categories.map((cat) => (
           <Global.Tag
+            $clickable
             $opacity={selectedTag === cat.name || selectedTag === null}
             key={cat.id}
             onClick={() => setSelectedTag(cat.name)}
@@ -18,6 +19,7 @@ const Filter = ({ selectedTag, setSelectedTag, categories, difficulties }) => {
 
         {difficulties.map((diff) => (
           <Global.Tag
+            $clickable
             $primary
             $opacity={selectedTag === diff.name || selectedTag === null}
             key={diff.id}

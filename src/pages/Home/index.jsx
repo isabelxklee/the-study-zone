@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { data } from "../../data";
 import Card from "../../components/Card";
-import Loading from "../../components/Loading";
 import Filter from "../../components/Filter";
 import { CardsContainer, CardElement } from "../../components/component-styles";
 import * as Global from "../../styles";
@@ -15,15 +13,16 @@ const EmptyState = () => {
   );
 };
 
-const Home = ({ categories, difficulties }) => {
+const Home = ({ algos, categories, difficulties }) => {
   const [selectedTag, setSelectedTag] = useState(null);
 
   const filteredData = () => {
     return selectedTag === null
-      ? data
-      : data.filter(
+      ? algos
+      : algos.filter(
           (algo) =>
-            algo.category === selectedTag || algo.difficulty === selectedTag
+            algo.category.name === selectedTag ||
+            algo.difficulty.name === selectedTag
         );
   };
 
@@ -49,24 +48,14 @@ const Home = ({ categories, difficulties }) => {
         difficulties={difficulties}
       />
 
-      {data ? (
-        <>
-          {filteredData().length > 0 ? (
-            <CardsContainer>
-              {filteredData().map((algo) => (
-                <Card
-                  key={algo.id}
-                  algo={algo}
-                  setSelectedTag={setSelectedTag}
-                />
-              ))}
-            </CardsContainer>
-          ) : (
-            <EmptyState />
-          )}
-        </>
+      {filteredData().length > 0 ? (
+        <CardsContainer>
+          {filteredData().map((algo) => (
+            <Card key={algo.id} algo={algo} setSelectedTag={setSelectedTag} />
+          ))}
+        </CardsContainer>
       ) : (
-        <Loading />
+        <EmptyState />
       )}
     </Global.Wrapper>
   );
