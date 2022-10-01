@@ -12,6 +12,7 @@ const Card = ({ algo, setSelectedTag }) => {
       <Global.TagsContainer>
         <Global.Tag
           $primary
+          $clickable
           $opacity={true}
           onClick={() => setSelectedTag(algo.difficulty.name)}
         >
@@ -19,6 +20,7 @@ const Card = ({ algo, setSelectedTag }) => {
         </Global.Tag>
         <Global.Tag
           $opacity={true}
+          $clickable
           onClick={() => setSelectedTag(algo.category.name)}
         >
           {algo.category.name}

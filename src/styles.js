@@ -83,7 +83,7 @@ export const Tag = styled.button`
   border: none;
   font-family: "Recoleta", serif;
   font-size: 16px;
-  cursor: pointer;
+  cursor: ${(props) => (props.$clickable ? "pointer" : "default")};
   opacity: ${(props) => (props.$opacity ? 1 : 0.5)};
   transition: 0.3s;
 `;
