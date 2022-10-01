@@ -54,6 +54,8 @@ export const Wrapper = styled.div`
 export const H1 = styled.h1`
   font-size: 60px;
   font-weight: 600;
+  margin: 20px 0;
+  line-height: 1;
 `;
 
 export const H3 = styled.h3`
