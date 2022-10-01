@@ -1,23 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import App from "./App";
-import Error from "./pages/Error";
-import ShowAlgorithm from "./pages/ShowAlgorithm";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <Error />,
-  },
-  {
-    path: "/algorithms/:algorithmId",
-    element: <ShowAlgorithm />,
-  },
-]);
 
 const client = new ApolloClient({
   uri: "https://study-zone-backend.herokuapp.com/graphql",
@@ -28,7 +14,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>
 );

@@ -26,8 +26,6 @@ const Home = ({ algos, categories, difficulties }) => {
         );
   };
 
-  console.log(algos);
-
   return (
     <Global.Wrapper>
       <Global.H1>Welcome to the Study Zone!</Global.H1>
