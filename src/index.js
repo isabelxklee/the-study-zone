@@ -5,8 +5,11 @@ import { BrowserRouter } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import App from "./App";
 
+const dev = "http://localhost:5000/graphql";
+// const prod = "https://study-zone-backend.herokuapp.com/graphql";
+
 const client = new ApolloClient({
-  uri: "https://study-zone-backend.herokuapp.com/graphql",
+  uri: dev,
   cache: new InMemoryCache(),
 });
 
