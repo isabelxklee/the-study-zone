@@ -1,5 +1,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ScrollToTop from "../../components/ScrollToTop";
 import { GlobalStyle } from "../../styles";
 import * as Global from "../../styles";
@@ -20,7 +22,28 @@ const ShowAlgorithm = ({ algo }) => {
         </Global.TagsContainer>
         <Global.Spacer>
           <Global.H2>My Solution</Global.H2>
-          <ReactMarkdown>{algo.solution}</ReactMarkdown>
+          <ReactMarkdown
+            components={{
+              code({ node, inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || "");
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    children={String(children).replace(/\n$/, "")}
+                    style={dark}
+                    language={match[1]}
+                    PreTag="div"
+                    {...props}
+                  />
+                ) : (
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                );
+              },
+            }}
+          >
+            {algo.solution}
+          </ReactMarkdown>
         </Global.Spacer>
       </Global.Wrapper>
     </>
