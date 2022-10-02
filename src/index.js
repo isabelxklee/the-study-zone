@@ -4,7 +4,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import App from "./App";
-import "./App.css";
 
 // const dev = "http://localhost:5000/graphql";
 const prod = "https://study-zone-backend.herokuapp.com/graphql";
