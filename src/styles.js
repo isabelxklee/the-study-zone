@@ -11,6 +11,7 @@ export const Colors = {
   pink: "#f68393",
   white: "#fff",
   blue: "#2D6AD2",
+  navy: "#262b4c",
 };
 
 export const GlobalStyle = createGlobalStyle`
