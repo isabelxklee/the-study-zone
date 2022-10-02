@@ -11,6 +11,7 @@ export const Colors = {
   pink: "#f68393",
   white: "#fff",
   blue: "#2D6AD2",
+  navy: "#262b4c",
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -58,6 +59,12 @@ export const H1 = styled.h1`
   line-height: 1;
 `;
 
+export const H2 = styled.h2`
+  font-size: 32px;
+  font-weight: 600;
+  margin: 8px 0;
+`;
+
 export const H3 = styled.h3`
   font-size: 24px;
   font-weight: 600;
@@ -96,4 +103,8 @@ export const TagsContainer = styled.div`
   margin-top: 16px;
   align-items: baseline;
   flex-wrap: wrap;
+`;
+
+export const Spacer = styled.div`
+  margin: 60px 0;
 `;

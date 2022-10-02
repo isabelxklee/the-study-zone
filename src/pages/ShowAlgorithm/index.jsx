@@ -1,21 +1,29 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
+import ScrollToTop from "../../components/ScrollToTop";
 import { GlobalStyle } from "../../styles";
 import * as Global from "../../styles";
 
 const ShowAlgorithm = ({ algo }) => {
-  console.log(algo);
   return (
-    <Global.Wrapper>
-      <GlobalStyle />
-      <Global.H1>{algo.name}</Global.H1>
-      <Global.P>{algo.description}</Global.P>
-      <Global.TagsContainer>
-        <Global.Tag $primary $opacity={true}>
-          {algo.difficulty.name}
-        </Global.Tag>
-        <Global.Tag $opacity={true}>{algo.category.name}</Global.Tag>
-      </Global.TagsContainer>
-    </Global.Wrapper>
+    <>
+      <ScrollToTop />
+      <Global.Wrapper>
+        <GlobalStyle />
+        <Global.H1>{algo.name}</Global.H1>
+        <Global.P>{algo.description}</Global.P>
+        <Global.TagsContainer>
+          <Global.Tag $primary $opacity={true}>
+            {algo.difficulty.name}
+          </Global.Tag>
+          <Global.Tag $opacity={true}>{algo.category.name}</Global.Tag>
+        </Global.TagsContainer>
+        <Global.Spacer>
+          <Global.H2>My Solution</Global.H2>
+          <ReactMarkdown>{algo.solution}</ReactMarkdown>
+        </Global.Spacer>
+      </Global.Wrapper>
+    </>
   );
 };
 

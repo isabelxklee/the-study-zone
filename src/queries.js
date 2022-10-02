@@ -6,6 +6,7 @@ export const GetEverything = gql`
       id
       name
       description
+      solution
       category {
         id
         name
