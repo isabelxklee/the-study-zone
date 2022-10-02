@@ -33,6 +33,7 @@ const ShowAlgorithm = ({ algo }) => (
                     borderRadius: "8px",
                     margin: "20px 0",
                     background: `${Global.Colors.navy}`,
+                    fontSize: "14px",
                   }}
                   language={match[1]}
                   PreTag="div"
