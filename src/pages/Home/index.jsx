@@ -1,18 +1,9 @@
 import React, { useState } from "react";
-import Card from "../../components/Card";
 import Filter from "../../components/Filter";
 import ScrollToTop from "../../components/ScrollToTop";
-import { CardsContainer, CardElement } from "../../components/component-styles";
+import AlgoList from "../../components/AlgoList";
+import EmptyState from "../../components/EmptyState";
 import * as Global from "../../styles";
-
-const EmptyState = () => {
-  return (
-    <CardElement emptyState>
-      <Global.H3>Oops, there aren't any algorithms to see here!</Global.H3>
-      <Global.P>Please try selecting another filter.</Global.P>
-    </CardElement>
-  );
-};
 
 const Home = ({ algos, categories, difficulties }) => {
   const [selectedTag, setSelectedTag] = useState(null);
@@ -52,11 +43,7 @@ const Home = ({ algos, categories, difficulties }) => {
         />
 
         {filteredData().length > 0 ? (
-          <CardsContainer>
-            {filteredData().map((algo) => (
-              <Card key={algo.id} algo={algo} setSelectedTag={setSelectedTag} />
-            ))}
-          </CardsContainer>
+          <AlgoList data={filteredData()} setSelectedTag={setSelectedTag} />
         ) : (
           <EmptyState />
         )}
