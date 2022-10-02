@@ -97,3 +97,7 @@ export const TagsContainer = styled.div`
   align-items: baseline;
   flex-wrap: wrap;
 `;
+
+export const Spacer = styled.div`
+  margin: 60px 0;
+`;

@@ -18,8 +18,10 @@ const ShowAlgorithm = ({ algo }) => {
           </Global.Tag>
           <Global.Tag $opacity={true}>{algo.category.name}</Global.Tag>
         </Global.TagsContainer>
-        <Global.H3>My Solution</Global.H3>
-        <ReactMarkdown>{algo.solution}</ReactMarkdown>
+        <Global.Spacer>
+          <Global.H3>My Solution</Global.H3>
+          <ReactMarkdown>{algo.solution}</ReactMarkdown>
+        </Global.Spacer>
       </Global.Wrapper>
     </>
   );

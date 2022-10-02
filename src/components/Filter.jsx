@@ -1,9 +1,8 @@
 import React from "react";
 import * as Global from "../styles";
-import { FilterContainer } from "./component-styles";
 
 const Filter = ({ selectedTag, setSelectedTag, categories, difficulties }) => (
-  <FilterContainer>
+  <Global.Spacer>
     <Global.H3>Select a filter</Global.H3>
     <Global.TagsContainer>
       {categories.map((cat) => (
@@ -30,7 +29,7 @@ const Filter = ({ selectedTag, setSelectedTag, categories, difficulties }) => (
       ))}
     </Global.TagsContainer>
     <button onClick={() => setSelectedTag(null)}>Reset</button>
-  </FilterContainer>
+  </Global.Spacer>
 );
 
 export default Filter;
