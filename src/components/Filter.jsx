@@ -3,7 +3,7 @@ import * as Global from "../styles";
 
 const Filter = ({ selectedTag, setSelectedTag, categories, difficulties }) => (
   <Global.Spacer>
-    <Global.H3>Select a filter</Global.H3>
+    <Global.H2>Select a filter</Global.H2>
     <Global.TagsContainer>
       {categories.map((cat) => (
         <Global.Tag
