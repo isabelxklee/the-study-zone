@@ -20,3 +20,7 @@ export const CardElement = styled.div`
   filter: drop-shadow(0 0 6px rgb(235, 143, 171, 0.6));
   background: ${Global.Colors.white};
 `;
+
+export const FilterContainer = styled.div`
+  margin: 40px 0;
+`;
