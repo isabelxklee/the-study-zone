@@ -1,8 +1,8 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import ScrollToTop from "../../components/ScrollToTop";
 import { GlobalStyle } from "../../styles";
 import * as Global from "../../styles";
-import ScrollToTop from "../../components/ScrollToTop";
 
 const ShowAlgorithm = ({ algo }) => {
   return (
