@@ -12,6 +12,11 @@ const App = () => {
 
   console.log(error ? `Error: ${error}` : "Nothing to see here!");
 
+  const createSlugs = (str) => {
+    str = str.replace(/\s+/g, "-").toLowerCase();
+    return str;
+  };
+
   return (
     <>
       <GlobalStyle />
@@ -29,7 +34,11 @@ const App = () => {
         </Route>
         {data &&
           data.algorithms.map((algo) => (
-            <Route exact path={`/algorithms/${algo.id}`} key={algo.id}>
+            <Route
+              exact
+              path={`/algorithms/${createSlugs(algo.name)}`}
+              key={algo.id}
+            >
               <ShowAlgorithm key={algo.id} algo={algo} />
             </Route>
           ))}
