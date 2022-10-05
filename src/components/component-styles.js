@@ -25,4 +25,5 @@ export const NavContainer = styled.div`
   display: flex;
   gap: 32px;
   justify-content: center;
+  margin-top: 40px;
 `;
