@@ -1,10 +1,11 @@
 import React from "react";
-import Home from "./pages/Home";
 import { useQuery } from "@apollo/client";
 import { Switch, Route } from "react-router-dom";
 import { GlobalStyle } from "./styles";
 import { Algorithms } from "./queries";
 import ShowAlgorithm from "./pages/ShowAlgorithm";
+import Home from "./pages/Home";
+import About from "./pages/About";
 import Header from "./components/Header";
 
 const App = () => {
@@ -24,6 +25,9 @@ const App = () => {
         <Header>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/about">
+            <About />
           </Route>
           {!loading &&
             data.algorithms.map((algo) => (
