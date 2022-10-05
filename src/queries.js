@@ -46,6 +46,7 @@ export const Algorithms = gql`
       id
       name
       description
+      solution
       category {
         id
         name
