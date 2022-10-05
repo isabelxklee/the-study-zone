@@ -1,17 +1,23 @@
 import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
 import Filter from "../../components/Filter";
 import ScrollToTop from "../../components/ScrollToTop";
 import AlgoList from "../../components/AlgoList";
 import EmptyState from "../../components/EmptyState";
+import Loading from "../../components/Loading";
+import { GetEverything } from "../../queries";
 import * as Global from "../../styles";
 
-const Home = ({ algos, categories, difficulties }) => {
+const Home = () => {
   const [selectedTag, setSelectedTag] = useState(null);
+  const { loading, error, data } = useQuery(GetEverything);
+
+  console.log(error ? `Error: ${error}` : "Nothing to see here!");
 
   const filteredData = () => {
     return selectedTag === null
-      ? algos
-      : algos.filter(
+      ? data.algorithms
+      : data.algorithms.filter(
           (algo) =>
             algo.category.name === selectedTag ||
             algo.difficulty.name === selectedTag
@@ -35,17 +41,23 @@ const Home = ({ algos, categories, difficulties }) => {
           including versions of Lorem Ipsum.
         </Global.P>
 
-        <Filter
-          selectedTag={selectedTag}
-          setSelectedTag={setSelectedTag}
-          categories={categories}
-          difficulties={difficulties}
-        />
-
-        {filteredData().length > 0 ? (
-          <AlgoList data={filteredData()} setSelectedTag={setSelectedTag} />
+        {loading ? (
+          <Loading />
         ) : (
-          <EmptyState />
+          <>
+            {" "}
+            <Filter
+              selectedTag={selectedTag}
+              setSelectedTag={setSelectedTag}
+              categories={data.categories}
+              difficulties={data.difficulties}
+            />
+            {filteredData().length > 0 ? (
+              <AlgoList data={filteredData()} setSelectedTag={setSelectedTag} />
+            ) : (
+              <EmptyState />
+            )}
+          </>
         )}
       </Global.Wrapper>
     </>

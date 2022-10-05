@@ -3,9 +3,14 @@ import * as Styled from "./component-styles";
 import * as Global from "../styles";
 
 const Card = ({ algo, setSelectedTag }) => {
+  const createSlugs = (str) => {
+    str = str.replace(/\s+/g, "-").toLowerCase();
+    return str;
+  };
+
   return (
     <Styled.CardElement>
-      <Global.InternalLink to={`algorithms/${algo.id}`}>
+      <Global.InternalLink to={`algorithms/${createSlugs(algo.name)}`}>
         <Global.H3>{algo.name}</Global.H3>
         <Global.P>{algo.description}</Global.P>
       </Global.InternalLink>

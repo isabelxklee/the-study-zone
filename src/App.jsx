@@ -3,33 +3,33 @@ import Home from "./pages/Home";
 import { useQuery } from "@apollo/client";
 import { Switch, Route } from "react-router-dom";
 import { GlobalStyle } from "./styles";
-import { GetEverything } from "./queries";
-import Loading from "./components/Loading";
+import { Algorithms } from "./queries";
 import ShowAlgorithm from "./pages/ShowAlgorithm";
 
 const App = () => {
-  const { loading, error, data } = useQuery(GetEverything);
+  const { loading, error, data } = useQuery(Algorithms);
 
   console.log(error ? `Error: ${error}` : "Nothing to see here!");
+
+  const createSlugs = (str) => {
+    str = str.replace(/\s+/g, "-").toLowerCase();
+    return str;
+  };
 
   return (
     <>
       <GlobalStyle />
       <Switch>
         <Route exact path="/">
-          {loading ? (
-            <Loading />
-          ) : (
-            <Home
-              algos={data.algorithms}
-              categories={data.categories}
-              difficulties={data.difficulties}
-            />
-          )}
+          <Home />
         </Route>
-        {data &&
+        {!loading &&
           data.algorithms.map((algo) => (
-            <Route exact path={`/algorithms/${algo.id}`} key={algo.id}>
+            <Route
+              exact
+              path={`/algorithms/${createSlugs(algo.name)}`}
+              key={algo.id}
+            >
               <ShowAlgorithm key={algo.id} algo={algo} />
             </Route>
           ))}

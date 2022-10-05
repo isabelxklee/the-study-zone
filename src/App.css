@@ -1,0 +1,27 @@
+hr {
+  border-style: solid;
+  border-color: #f68393;
+  margin: 32px 0;
+  border-width: 1px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+p,
+li,
+blockquote {
+  font-size: 18px;
+}
+
+ol {
+  padding-inline-start: 14px;
+}
+
+blockquote {
+  margin-inline-start: 0;
+  opacity: 0.6;
+}
