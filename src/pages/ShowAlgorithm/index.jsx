@@ -21,34 +21,42 @@ const ShowAlgorithm = ({ algo }) => (
       </Global.TagsContainer>
       <Global.Spacer>
         <Global.H2>My Solution</Global.H2>
-        <ReactMarkdown
-          components={{
-            code({ node, inline, className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || "");
-              return !inline && match ? (
-                <SyntaxHighlighter
-                  children={String(children).replace(/\n$/, "")}
-                  style={nightOwl}
-                  customStyle={{
-                    borderRadius: "8px",
-                    margin: "20px 0",
-                    background: `${Global.Colors.navy}`,
-                    fontSize: "14px",
-                  }}
-                  language={match[1]}
-                  PreTag="div"
-                  {...props}
-                />
-              ) : (
-                <code className={className} {...props}>
-                  {children}
-                </code>
-              );
-            },
-          }}
-        >
-          {algo.solution}
-        </ReactMarkdown>
+        {algo.solution ? (
+          <ReactMarkdown
+            components={{
+              code({ node, inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || "");
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    children={String(children).replace(/\n$/, "")}
+                    style={nightOwl}
+                    customStyle={{
+                      borderRadius: "8px",
+                      margin: "20px 0",
+                      background: `${Global.Colors.navy}`,
+                      fontSize: "14px",
+                    }}
+                    language={match[1]}
+                    PreTag="div"
+                    {...props}
+                  />
+                ) : (
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                );
+              },
+            }}
+          >
+            {algo.solution}
+          </ReactMarkdown>
+        ) : (
+          <>
+            <Global.P>
+              Oops, there isn't a solution for this algorithm yet!
+            </Global.P>
+          </>
+        )}
       </Global.Spacer>
     </Global.Wrapper>
   </>
