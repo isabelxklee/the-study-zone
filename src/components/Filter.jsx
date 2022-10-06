@@ -9,6 +9,7 @@ const Filter = ({ selectedTag, setSelectedTag, categories, difficulties }) => (
         <Global.Tag
           $clickable
           $opacity={selectedTag === cat.name || selectedTag === null}
+          $background={Global.Colors.blue}
           key={cat.id}
           onClick={() => setSelectedTag(cat.name)}
         >
@@ -21,14 +22,23 @@ const Filter = ({ selectedTag, setSelectedTag, categories, difficulties }) => (
           $clickable
           $primary
           $opacity={selectedTag === diff.name || selectedTag === null}
+          $background={Global.Colors.tan}
           key={diff.id}
           onClick={() => setSelectedTag(diff.name)}
         >
           {diff.name}
         </Global.Tag>
       ))}
+      <Global.Tag
+        $clickable
+        $primary
+        $opacity={true}
+        $background={Global.Colors.navy}
+        onClick={() => setSelectedTag(null)}
+      >
+        Select All
+      </Global.Tag>
     </Global.TagsContainer>
-    <button onClick={() => setSelectedTag(null)}>Reset</button>
   </Global.Spacer>
 );
 

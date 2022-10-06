@@ -14,10 +14,12 @@ const ShowAlgorithm = ({ algo }) => (
       <Global.H1>{algo.name}</Global.H1>
       <Global.P>{algo.description}</Global.P>
       <Global.TagsContainer>
-        <Global.Tag $primary $opacity={true}>
+        <Global.Tag $opacity={true} $background={Global.Colors.blue}>
+          {algo.category.name}
+        </Global.Tag>
+        <Global.Tag $primary $opacity={true} $background={Global.Colors.tan}>
           {algo.difficulty.name}
         </Global.Tag>
-        <Global.Tag $opacity={true}>{algo.category.name}</Global.Tag>
       </Global.TagsContainer>
       <Global.Spacer>
         <Global.H2>My Solution</Global.H2>

@@ -83,9 +83,13 @@ export const InternalLink = styled(Link)`
   font-size: 24px;
 `;
 
+export const TextButton = styled.button`
+  font-size: 16px;
+`;
+
 export const Tag = styled.button`
   border-radius: 100px;
-  background: ${(props) => (props.$primary ? Colors.tan : Colors.blue)};
+  background: ${(props) => props.$background};
   color: ${Colors.white};
   padding: 8px 16px;
   width: fit-content;

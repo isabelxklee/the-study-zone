@@ -16,19 +16,21 @@ const Card = ({ algo, setSelectedTag }) => {
       </Global.InternalLink>
       <Global.TagsContainer>
         <Global.Tag
-          $primary
-          $clickable
-          $opacity={true}
-          onClick={() => setSelectedTag(algo.difficulty.name)}
-        >
-          {algo.difficulty.name}
-        </Global.Tag>
-        <Global.Tag
           $opacity={true}
           $clickable
+          $background={Global.Colors.blue}
           onClick={() => setSelectedTag(algo.category.name)}
         >
           {algo.category.name}
+        </Global.Tag>
+        <Global.Tag
+          $primary
+          $clickable
+          $opacity={true}
+          $background={Global.Colors.tan}
+          onClick={() => setSelectedTag(algo.difficulty.name)}
+        >
+          {algo.difficulty.name}
         </Global.Tag>
       </Global.TagsContainer>
     </Styled.CardElement>
