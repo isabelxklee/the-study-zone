@@ -9,16 +9,19 @@ export const CardsContainer = styled.div`
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
-    padding: 40px 0;
   }
 `;
 
 export const CardElement = styled.div`
   border-radius: 8px;
-  padding: ${(props) => (props.emptyState ? "40px" : "16px 32px")};
-  margin: ${(props) => (props.emptyState ? "40px 0" : "0")};
+  padding: ${(props) => (props.$emptyState ? "40px" : "16px 32px")};
+  margin: ${(props) => (props.$emptyState ? "40px 0" : "0")};
   filter: drop-shadow(0 0 6px rgb(235, 143, 171, 0.6));
   background: ${Global.Colors.white};
+
+  @media (max-width: 800px) {
+    padding: 16px 32px;
+  }
 `;
 
 export const NavContainer = styled.div`
@@ -26,4 +29,9 @@ export const NavContainer = styled.div`
   gap: 32px;
   justify-content: center;
   margin-top: 40px;
+
+  @media (max-width: 800px) {
+    justify-content: flex-start;
+    margin: 40px 40px 0 40px;
+  }
 `;
