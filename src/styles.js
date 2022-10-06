@@ -79,7 +79,7 @@ export const H3 = styled.h3`
 
 export const P = styled.p`
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   margin: 8px 0;
 `;
 
@@ -90,7 +90,7 @@ export const InternalLink = styled(Link)`
 `;
 
 export const TextButton = styled.button`
-  font-size: 16px;
+  font-size: 18px;
 `;
 
 export const Tag = styled.button`
@@ -101,7 +101,7 @@ export const Tag = styled.button`
   width: fit-content;
   border: none;
   font-family: "Recoleta", serif;
-  font-size: 16px;
+  font-size: 18px;
   cursor: ${(props) => (props.$clickable ? "pointer" : "default")};
   opacity: ${(props) => (props.$opacity ? 1 : 0.5)};
   transition: 0.3s;
