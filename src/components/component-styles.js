@@ -9,7 +9,6 @@ export const CardsContainer = styled.div`
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
-    padding: 40px 0;
   }
 `;
 
@@ -26,4 +25,9 @@ export const NavContainer = styled.div`
   gap: 32px;
   justify-content: center;
   margin-top: 40px;
+
+  @media (max-width: 800px) {
+    justify-content: flex-start;
+    margin: 40px 40px 0 40px;
+  }
 `;
