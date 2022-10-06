@@ -45,7 +45,6 @@ const Home = () => {
           <Loading />
         ) : (
           <>
-            {" "}
             <Filter
               selectedTag={selectedTag}
               setSelectedTag={setSelectedTag}
